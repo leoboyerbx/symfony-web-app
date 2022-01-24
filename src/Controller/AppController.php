@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-
+use App\Repository\CustomerRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -10,10 +10,12 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class AppController extends AbstractController {
 
-    #[Route('/home', name: 'app_home')]
-    public function home(Request $request) {
-        return $this->render('home.twig', [
-            'name' => $request->query->get('name') ?? 'inconnu'
+    #[Route('/', name: 'app')]
+    public function index(Request $request, CustomerRepository $repo): Response {
+        $customers = $repo->findAll();
+        return $this->render('app/index.html.twig', [
+            'controller_name' => 'AppController',
+            'name' => $request->query->get('name', 'inconnu'),
         ]);
     }
 }
