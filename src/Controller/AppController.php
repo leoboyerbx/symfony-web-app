@@ -13,6 +13,9 @@ class AppController extends AbstractController {
     #[Route('/', name: 'app')]
     public function index(Request $request, CustomerRepository $repo): Response {
         $customers = $repo->findAll();
+
+        $this->addFlash('error', 'form.comment.content_not_blank');
+        return $this->redirectToRoute('app_base2');
         return $this->render('app/index.html.twig', [
             'controller_name' => 'AppController',
             'name' => $request->query->get('name', 'inconnu'),

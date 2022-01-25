@@ -111,6 +111,11 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/http-foundation" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/framework-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/twig/intl-extra" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/nette/utils" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/league/commonmark" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/nette/schema" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/league/config" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/dflydev/dot-access-data" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

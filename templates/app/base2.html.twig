@@ -6,7 +6,14 @@
 {% endblock %}
 
 {% block body %}
-    {{ app.request.locale }}
+    {% for message in app.flashes('error') %}
+        <div class="alert alert-error">
+            {{ message }}
+        </div>
+    {% endfor %}
+    <section class="my-8">
+        App locale: <span class="text-red-600">{{ app.request.locale }}</span>
+    </section>
     <div>
         Paramètres:
         <ul>
@@ -17,4 +24,12 @@
             {% endfor %}
         </ul>
     </div>
+    <section>
+        {% set content %}
+        # Hello
+        - point 1
+        - point 2
+        {% endset %}
+        {{ content | markdown_to_html() }}
+    </section>
 {% endblock %}
