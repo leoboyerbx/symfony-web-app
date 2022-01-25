@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{%  block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="/assets/styles/app.css">
+{% endblock %}
+
+{% block body %}
+    {{ app.request.locale }}
+    <div>
+        Paramètres:
+        <ul>
+            {% for name, param in app.request.query.all %}
+                <li>
+                    {{ name }}: {{ param }}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

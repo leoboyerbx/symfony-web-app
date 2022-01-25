@@ -18,4 +18,10 @@ class AppController extends AbstractController {
             'name' => $request->query->get('name', 'inconnu'),
         ]);
     }
+    #[Route('/base2', name: 'app_base2')]
+    public function base2(Request $request): Response {
+        return $this->render('app/base2.html.twig', [
+            'controller_name' => 'AppController',
+        ]);
+    }
 }
